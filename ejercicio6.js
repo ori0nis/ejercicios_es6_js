@@ -14,21 +14,32 @@ const exams = [
     {name: 'Keanu Reeves', score: 10}
 ];
 
-const eachExam = exams.forEach((exam) => console.log(exam));
+const eachExamScore = exams.map(exam => exam.score);
+console.log(eachExamScore);
 
-console.log(eachExam);
-
-
-// const eachScore = exams.map(exam => exams.score);
-
-// console.log(eachScore);
-
-const examScores = exams.reduce((acc, eachScore) => acc + eachScore, 0);
-
+const examScores = eachExamScore.reduce((acc, eachExamScore) => acc + eachExamScore, 0);
 console.log(examScores);
 
+//Simplificado (esto es lo primero que había hecho, pero no me daba porque en lugar de exam ponía exam.score en el curr):
 
-/* 6.2 Dado el mismo array, haz una suma de todos las notas de los examenes de los 
-alumnos que esten aprobados usando la función .reduce(). */
+const totalScore = exams.reduce((acc, exam) => acc + exam.score, 0);
+console.log(totalScore);
 
-/* 6.3 Dado el mismo array, haz la media de las notas de todos los examenes .reduce(). */
+
+/* 6.2 Dado el mismo array, haz una suma de todas las notas de los exámenes de los 
+alumnos que estén aprobados usando la función .reduce(). */
+
+const studentsThatPassed = exams.reduce((acc, exam) => {
+    if (exam.score >= 5) {
+        return acc + exam.score;
+    }
+    return acc;
+}, 0);
+
+console.log(studentsThatPassed);
+
+
+/* 6.3 Dado el mismo array, haz la media de las notas de todos los exámenes usando .reduce(). */
+
+const totalAverage = exams.reduce((acc, exam) => acc + exam.score / exams.length, 0);
+console.log(totalAverage);
