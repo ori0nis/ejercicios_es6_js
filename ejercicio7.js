@@ -16,6 +16,5 @@ const videogames = [
 const RPGS = videogames.filter(videogame => videogame.genders.includes("RPG"));
 console.log(RPGS);
 
-const RPGSaverage= RPGS.reduce((acc, videogame) => acc + videogame.score, 0) / RPGS.length;
+const RPGSaverage = RPGS.reduce((acc, videogame) => acc + videogame.score, 0) / RPGS.length;
 console.log(RPGSaverage);
-
