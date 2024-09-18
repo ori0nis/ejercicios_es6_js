@@ -41,5 +41,5 @@ console.log(studentsThatPassed);
 
 /* 6.3 Dado el mismo array, haz la media de las notas de todos los exámenes usando .reduce(). */
 
-const totalAverage = exams.reduce((acc, exam) => acc + exam.score / exams.length, 0);
+const totalAverage = exams.reduce((acc, exam) => acc + exam.score, 0) / exams.length;
 console.log(totalAverage);
